@@ -1,0 +1,11 @@
+Model Information:
+* title:	3D Map of Roshar (Stormlight Archive)
+* source:	https://sketchfab.com/3d-models/3d-map-of-roshar-stormlight-archive-dffcd5e60a39448699fe909b7957aa87
+* author:	Lugremg (https://sketchfab.com/lugremg)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "3D Map of Roshar (Stormlight Archive)" (https://sketchfab.com/3d-models/3d-map-of-roshar-stormlight-archive-dffcd5e60a39448699fe909b7957aa87) by Lugremg (https://sketchfab.com/lugremg) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
