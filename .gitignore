@@ -29,3 +29,4 @@
 /config/master.key
 client/public/scene.bin
 client/public/scene.gltf
+client/src/Scene.js
