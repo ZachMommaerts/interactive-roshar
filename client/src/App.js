@@ -1,8 +1,8 @@
 import './App.css';
 import { Routes, Route } from 'react-router-dom'
 import styled from 'styled-components';
-import StartMenu from './StartMenu';
-import Environment from './Environment';
+import StartMenu from './components/StartMenu';
+import Environment from './components/Environment';
 
 const Div = styled.div`
   width: 100%;
