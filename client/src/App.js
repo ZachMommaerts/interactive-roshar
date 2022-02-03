@@ -1,10 +1,8 @@
 import './App.css';
-import { Canvas } from '@react-three/fiber';
-import { Suspense } from "react";
-import { OrbitControls} from '@react-three/drei';
+import { Routes, Route } from 'react-router-dom'
 import styled from 'styled-components';
-import Scene from './Scene';
-import DropDown from './DropDown';
+import StartMenu from './StartMenu';
+import Environment from './Environment';
 
 const Div = styled.div`
   width: 100%;
@@ -14,15 +12,10 @@ const Div = styled.div`
 function App() {
   return (
     <Div>
-      <DropDown />
-      <Canvas>
-        <OrbitControls />
-        <ambientLight  intensity={1}/>
-        <directionalLight  intensity={1} position={[20, 2, 20]}/>
-        <Suspense fallback={null}>
-          <Scene />
-        </Suspense>
-      </Canvas>
+      <Routes>
+        <Route path='/' element={<StartMenu />} />
+        <Route path='/map' element={<Environment />} />
+      </Routes>
     </Div>
   );
 }

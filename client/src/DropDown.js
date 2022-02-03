@@ -8,9 +8,14 @@ const Dropdown = styled.select`
     top: 5%;
 `;
 
-export default function DropDown() {
+export default function DropDown({ setChapter }) {
+
+    const handleChange = (e) => {
+        setChapter(e.target.value)
+    }
+
     return(
-        <Dropdown>
+        <Dropdown onChange={handleChange}>
             <option value='Chapter One'>Chapter One</option>
             <option value='Chapter Two'>Chapter Two</option>
         </Dropdown>
