@@ -10,7 +10,7 @@ export default function Marker( {xPosition, yPosition, zPosition}) {
     }, [hovered])
 
     useFrame(state => {
-        markerRef.current.position.y = (12 + Math.sin(state.clock.getElapsedTime())) / 50
+        markerRef.current.position.y = (12 + Math.sin(state.clock.getElapsedTime() * 2)) / 50
     })
 
     return(

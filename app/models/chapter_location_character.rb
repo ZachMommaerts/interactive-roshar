@@ -1,0 +1,2 @@
+class ChapterLocationCharacter < ApplicationRecord
+end
