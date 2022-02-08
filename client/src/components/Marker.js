@@ -1,7 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
+import { Html } from '@react-three/drei';
 
-export default function Marker( {xPosition, yPosition, zPosition}) {
+export default function Marker( { xPosition, yPosition, zPosition, color }) {
     const [hovered, setHovered ] = useState(false)
     const markerRef = useRef();
     
@@ -10,7 +11,7 @@ export default function Marker( {xPosition, yPosition, zPosition}) {
     }, [hovered])
 
     useFrame(state => {
-        markerRef.current.position.y = (12 + Math.sin(state.clock.getElapsedTime() * 2)) / 50
+        markerRef.current.position.y = (yPosition + Math.sin(state.clock.getElapsedTime() * 2))
     })
 
     return(
@@ -22,8 +23,11 @@ export default function Marker( {xPosition, yPosition, zPosition}) {
             onPointerOver={() => setHovered(true)}
             onPointerOut={() => setHovered(false)}
             >
-                <coneBufferGeometry attach='geometry' args={[.01, .05, 20]} />
-                <meshLambertMaterial attach='material' color='green' />
+                <coneBufferGeometry attach='geometry' args={[1, 5, 20]} />
+                <meshLambertMaterial attach='material' color={color} />
+                <Html position={[0,-10,0]}>
+                    <h1>Kaladin</h1>
+                </Html>
         </mesh>
     )
 }

@@ -1,3 +1,23 @@
 {
-    "liveServer.settings.port": 5501
+    "liveServer.settings.port": 5501,
+    "workbench.colorCustomizations": {
+        "activityBar.activeBackground": "#318d8d",
+        "activityBar.activeBorder": "#762976",
+        "activityBar.background": "#318d8d",
+        "activityBar.foreground": "#e7e7e7",
+        "activityBar.inactiveForeground": "#e7e7e799",
+        "activityBarBadge.background": "#762976",
+        "activityBarBadge.foreground": "#e7e7e7",
+        "sash.hoverBorder": "#318d8d",
+        "statusBar.background": "#246767",
+        "statusBar.foreground": "#e7e7e7",
+        "statusBarItem.hoverBackground": "#318d8d",
+        "statusBarItem.remoteBackground": "#246767",
+        "statusBarItem.remoteForeground": "#e7e7e7",
+        "titleBar.activeBackground": "#246767",
+        "titleBar.activeForeground": "#e7e7e7",
+        "titleBar.inactiveBackground": "#24676799",
+        "titleBar.inactiveForeground": "#e7e7e799"
+    },
+    "peacock.remoteColor": "#246767"
 }
