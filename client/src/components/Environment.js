@@ -24,17 +24,17 @@ export default function Environment() {
             <DropDown setChapter={setChapter} />
             <H2>{chapter}</H2>
             <Canvas camera={{position: [0,80,0]}}>
-                <OrbitControls />
+                <OrbitControls minPolarAngle={0} maxPolarAngle={Math.PI / 2} minDistance={50} maxDistance={150}/>
                 <Lights />
                 {/* Kaladin Marker */}
                 <Marker 
                     xPosition={75}
-                    yPosition={25}
+                    yPosition={5}
                     zPosition={-5}
                     color={'hotpink'}
                 />
                 <Suspense fallback={null}>
-                    <Complicated_roshar_with_buildings position={[0,0,0]} />
+                    <Complicated_roshar_with_buildings position={[0,-20,0]} />
                 </Suspense>
             </Canvas>
         </>
