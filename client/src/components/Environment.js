@@ -18,7 +18,6 @@ const H2 = styled.h2`
 
 export default function Environment() {
     const [ chapter, setChapter ] = useState('Chapter One');
-    const [ kaladinLocation, setKaladinLocation ] = useState('')
     return(
         <>
             <DropDown setChapter={setChapter} />
@@ -28,8 +27,8 @@ export default function Environment() {
                 <Lights />
                 {/* Kaladin Marker */}
                 <Marker 
-                    xPosition={75}
-                    yPosition={5}
+                    xPosition={93}
+                    yPosition={1}
                     zPosition={-5}
                     color={'hotpink'}
                 />
