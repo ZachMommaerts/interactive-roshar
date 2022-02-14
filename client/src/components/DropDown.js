@@ -16,8 +16,11 @@ export default function DropDown({ setChapter }) {
 
     return(
         <Dropdown onChange={handleChange}>
-            <option value='Chapter One'>Chapter One</option>
-            <option value='Chapter Two'>Chapter Two</option>
+            <option value={0}>Prologue</option>
+            <option value={1}>Chapter One</option>
+            <option value={2}>Chapter Two</option>
+            <option value={3}>Chapter Three</option>
+            <option value={4}>Chapter Four</option>
         </Dropdown>
     )
 };

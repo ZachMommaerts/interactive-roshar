@@ -17,12 +17,34 @@ const H2 = styled.h2`
 `;
 
 export default function Environment() {
-    const [ book, setBook ] = useState(1)
-    const [ chapter, setChapter ] = useState('Chapter One');
+    const [ book, setBook ] = useState(1);
+    const [ bookInfo, setBookInfo ] = useState({})
+    const [ chapter, setChapter ] = useState(0);
 
     useEffect(() => {
-        fetch(`/books`)
+        fetch(`/books/${book}`)
+        .then(r => r.json())
+        .then(data => setBookInfo(data))
+        .catch(error => alert(error))
     }, [])
+
+    const renderChapter = () => {
+        if (bookInfo.chapters) {
+        const chapterSelect = bookInfo.chapters[chapter];
+        const summary = chapterSelect.chapter_location_characters[0].summary
+        const character = chapterSelect.characters[0].name
+        const color = chapterSelect.characters[0].color
+        const locationName = chapterSelect.locations[0].name
+        return(
+            <Marker
+                xPosition={chapterSelect.locations[0].x_coordinates}
+                yPosition={chapterSelect.locations[0].y_coordinates}
+                zPosition={chapterSelect.locations[0].z_coordinates}
+                color={chapterSelect.characters[0].color}
+            />
+        )
+        }
+    }
 
     return(
         <>
@@ -32,12 +54,7 @@ export default function Environment() {
                 <OrbitControls minPolarAngle={0} maxPolarAngle={Math.PI / 2} minDistance={50} maxDistance={150}/>
                 <Lights />
                 {/* Kaladin Marker */}
-                <Marker 
-                    xPosition={93}
-                    yPosition={1}
-                    zPosition={-5}
-                    color={'hotpink'}
-                />
+                {renderChapter()}
                 <Suspense fallback={null}>
                     <Complicated_roshar_with_buildings position={[0,-20,0]} />
                 </Suspense>
