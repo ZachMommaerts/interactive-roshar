@@ -1,5 +1,5 @@
 class ChapterLocationCharacter < ApplicationRecord
     belongs_to :chapter
     belongs_to :character
-    belongs_to :locations
+    belongs_to :location
 end

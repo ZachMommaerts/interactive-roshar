@@ -4,7 +4,7 @@ class CreateChapters < ActiveRecord::Migration[7.0]
       t.integer :book_id
       t.string :section
       t.string :title
-      t.year :integer
+      t.integer :year
 
       t.timestamps
     end
