@@ -4,7 +4,8 @@ import { Suspense } from "react";
 import { OrbitControls } from '@react-three/drei';
 import styled from 'styled-components';
 import Marker from './Marker';
-import DropDown from './DropDown';
+import ChapterDropDown from './ChapterDropDown';
+import BookDropDown from './BookDropDown';
 import Lights from './Lights';
 import Complicated_roshar_with_buildings from './Map'
 
@@ -26,7 +27,7 @@ export default function Environment() {
         .then(r => r.json())
         .then(data => setBookInfo(data))
         .catch(error => alert(error))
-    }, [])
+    }, [book])
 
     const renderChapter = () => {
         if (bookInfo.chapters) {
@@ -48,7 +49,8 @@ export default function Environment() {
 
     return(
         <>
-            <DropDown setChapter={setChapter} />
+            <BookDropDown setBook={setBook} />
+            <ChapterDropDown setChapter={setChapter} />
             <H2>{chapter}</H2>
             <Canvas camera={{position: [0,80,0]}}>
                 <OrbitControls minPolarAngle={0} maxPolarAngle={Math.PI / 2} minDistance={50} maxDistance={150}/>
