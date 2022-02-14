@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { Suspense } from "react";
 import { OrbitControls } from '@react-three/drei';
@@ -17,7 +17,13 @@ const H2 = styled.h2`
 `;
 
 export default function Environment() {
+    const [ book, setBook ] = useState(1)
     const [ chapter, setChapter ] = useState('Chapter One');
+
+    useEffect(() => {
+        fetch(`/books`)
+    }, [])
+
     return(
         <>
             <DropDown setChapter={setChapter} />
