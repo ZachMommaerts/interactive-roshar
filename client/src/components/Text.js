@@ -5,13 +5,13 @@ import cinzel from '../assets/Cinzel_Regular.json';
 
 extend({ TextGeometry })
 
-export default function Text() {
+export default function Text({ text, textPosition, textRotation, textSize}) {
     const font = new FontLoader().parse(cinzel);
     
-    return(
-    <mesh position={[0,10,0]}>
-        <textGeometry args={['Alethkar', {font, size:5, height: 1}]}/>
-        <meshLambertMaterial attach='material' color={'gold'}/>
+    return( 
+    <mesh position={textPosition} rotation={textRotation}>
+        <textGeometry args={[text, {font, size: textSize, height: 1}]}/>
+        <meshLambertMaterial attach='material' color={'white'}/>
     </mesh>
     )
 }
