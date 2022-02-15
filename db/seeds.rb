@@ -36,7 +36,7 @@ Character.create(name: 'Lirin', color: '#db7623')
 
 Location.create(name: 'Kholinar', x_coordinates: 93, y_coordinates: 1, z_coordinates: -5)
 Location.create(name: 'Battle Outside of Hearthstone', x_coordinates: 81, y_coordinates: 1, z_coordinates: -28)
-Location.create(name: 'Unclaimed Hills', x_coordinates: 81, y_coordinates: 1, z_coordinates: -28)
+Location.create(name: 'Unclaimed Hills', x_coordinates: 115, y_coordinates: 11, z_coordinates: 17)
 Location.create(name: 'Kharbranth', x_coordinates: 25, y_coordinates: 0.5, z_coordinates: 51)
 Location.create(name: 'Shattered Plains', x_coordinates: 104, y_coordinates: 7, z_coordinates: 45)
 Location.create(name: "Longbrow's Straits", x_coordinates: 60, y_coordinates: -0.5, z_coordinates: 73)

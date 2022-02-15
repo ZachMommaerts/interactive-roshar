@@ -7,6 +7,7 @@ import Marker from './Marker';
 import ChapterDropDown from './ChapterDropDown';
 import BookDropDown from './BookDropDown';
 import Lights from './Lights';
+import Text from './Text';
 import Complicated_roshar_with_buildings from './Map'
 
 const H2 = styled.h2`
@@ -58,6 +59,7 @@ export default function Environment() {
                 {/* Kaladin Marker */}
                 {renderChapter()}
                 <Suspense fallback={null}>
+                    <Text/>
                     <Complicated_roshar_with_buildings position={[0,-20,0]} />
                 </Suspense>
             </Canvas>
