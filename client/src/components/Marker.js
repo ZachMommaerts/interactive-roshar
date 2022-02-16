@@ -25,9 +25,9 @@ export default function Marker( { xPosition, yPosition, zPosition, color }) {
             >
                 <coneBufferGeometry attach='geometry' args={[1, 5, 20]} />
                 <meshLambertMaterial attach='material' color={color} />
-                <Html position={[0,-10,0]}>
+                {/* <Html position={[0,-10,0]}>
                     <h1>Kaladin</h1>
-                </Html>
+                </Html> */}
         </mesh>
     )
 }

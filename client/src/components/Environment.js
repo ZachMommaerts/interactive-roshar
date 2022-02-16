@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { Suspense } from "react";
-import { OrbitControls, PerspectiveCamera } from '@react-three/drei';
+import { OrbitControls } from '@react-three/drei';
 import styled from 'styled-components';
 import Marker from './Marker';
 import ChapterDropDown from './ChapterDropDown';
@@ -61,23 +61,155 @@ export default function Environment() {
                 {/* Kaladin Marker */}
                 {renderChapter()}
                 <Suspense fallback={null}>
+                    {/* Chapter and Prologue information */}
                     <Text 
                         text={chapterSection}
-                        textPosition={[0,60,-50]}
+                        textPosition={[10,60,-50]}
                         textRotation={[0,0,0]}
-                        textSize={5}
+                        textSize={3}
+                        textWidth={1.5}
                     />
                     <Text 
                         text={chapterTitle}
                         textPosition={[0,50,-50]}
                         textRotation={[0,0,0]}
                         textSize={8}
+                        textWidth={2}
+                    />
+                    {/* Countries start here */}
+                    <Text 
+                        text={'Unclaimed Hills'}
+                        textPosition={[100,10,20]}
+                        textRotation={[Math.PI/-5,0,0]}
+                        textSize={2}
+                        textWidth={1}
                     />
                     <Text 
                         text={'Alethkar'}
-                        textPosition={[70,15,10]}
-                        textRotation={[0,Math.PI / 3,0]}
-                        textSize={6}
+                        textPosition={[65,10,10]}
+                        textRotation={[Math.PI/-5,0,0]}
+                        textSize={4}
+                        textWidth={1}
+                    />
+                    <Text 
+                        text={'Herdaz'}
+                        textPosition={[70,10,-38]}
+                        textRotation={[Math.PI/-5,0,0]}
+                        textSize={4}
+                        textWidth={1}
+                    />
+                    <Text 
+                        text={'Jah Keved'}
+                        textPosition={[25,10,-18]}
+                        textRotation={[Math.PI/-5,0,0]}
+                        textSize={4}
+                        textWidth={1}
+                    />
+                    <Text 
+                        text={'Reshi Isles'}
+                        textPosition={[-20,5,-70]}
+                        textRotation={[Math.PI/-5,0,0]}
+                        textSize={4}
+                        textWidth={1}
+                    />
+                    <Text 
+                        text={'Jah Keved'}
+                        textPosition={[25,10,-18]}
+                        textRotation={[Math.PI/-5,0,0]}
+                        textSize={4}
+                        textWidth={1}
+                    />
+                    <Text 
+                        text={'Shinovar'}
+                        textPosition={[-100,10,0]}
+                        textRotation={[Math.PI/-5,0,0]}
+                        textSize={4}
+                        textWidth={1}
+                    />
+                    <Text 
+                        text={'Frostlands'}
+                        textPosition={[60,5,60]}
+                        textRotation={[Math.PI/-5,0,0]}
+                        textSize={4}
+                        textWidth={1}
+                    />
+                    <Text 
+                        text={'Thaylenah'}
+                        textPosition={[28,5,80]}
+                        textRotation={[Math.PI/-5,0,0]}
+                        textSize={3}
+                        textWidth={1}
+                    />
+                    <Text 
+                        text={'Azir'}
+                        textPosition={[-40,6,20]}
+                        textRotation={[Math.PI/-5,0,0]}
+                        textSize={4}
+                        textWidth={1}
+                    />
+                    <Text 
+                        text={'Tukar'}
+                        textPosition={[-55,0,55]}
+                        textRotation={[Math.PI/-5,0,0]}
+                        textSize={4}
+                        textWidth={1}
+                    />
+                    <Text 
+                        text={'Aimia'}
+                        textPosition={[-135,0,30]}
+                        textRotation={[Math.PI/-5,0,0]}
+                        textSize={4}
+                        textWidth={1}
+                    />
+                    {/* Start of cities */}
+                    <Text
+                        text={'Kharbranth'}
+                        textPosition={[19,5,50]}
+                        textRotation={[Math.PI/-5,0,0]}
+                        textSize={1.5}
+                        textWidth={.5}
+                    />
+                    <Text
+                        text={'The Shattered Plains'}
+                        textPosition={[90,7,45]}
+                        textRotation={[Math.PI/-5,0,0]}
+                        textSize={1.5}
+                        textWidth={.5}
+                    />
+                    <Text
+                        text={'Hearthstone'}
+                        textPosition={[85,5,-30]}
+                        textRotation={[Math.PI/-5,0,0]}
+                        textSize={1.5}
+                        textWidth={.5}
+                    />
+                    <Text
+                        text={'Kholinar'}
+                        textPosition={[88,5,-5]}
+                        textRotation={[Math.PI/-5,0,0]}
+                        textSize={1.5}
+                        textWidth={.5}
+                    />
+                    <Text
+                        text={'Urithiru'}
+                        textPosition={[-9,13,22]}
+                        textRotation={[Math.PI/-5,0,0]}
+                        textSize={1.5}
+                        textWidth={.5}
+                    />
+                    <Text
+                        text={'The Purelake'}
+                        textPosition={[-30,-3,-7]}
+                        textRotation={[Math.PI/-5,0,0]}
+                        textSize={1.5}
+                        textWidth={.5}
+                    />
+                    <Text
+                        text={'Azimir'}
+                        textPosition={[-45,2,30]}
+                        textRotation={[Math.PI/-5,0,0]}
+                        textSize={1.5}
+                        textWidth={.5}
                     />
                     <Complicated_roshar_with_buildings position={[0,-20,0]} />
                 </Suspense>
