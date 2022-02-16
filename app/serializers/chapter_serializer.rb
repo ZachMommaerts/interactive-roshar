@@ -1,5 +1,5 @@
 class ChapterSerializer < ActiveModel::Serializer
-  attributes :id, :title, :year
+  attributes :id, :title, :section, :year
 
   belongs_to :book
   has_many :chapter_location_characters

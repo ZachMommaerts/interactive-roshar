@@ -40,12 +40,28 @@ export default function Environment() {
         const color = chapterSelect.characters[0].color
         const locationName = chapterSelect.locations[0].name
         return(
-            <Marker
-                xPosition={chapterSelect.locations[0].x_coordinates}
-                yPosition={chapterSelect.locations[0].y_coordinates}
-                zPosition={chapterSelect.locations[0].z_coordinates}
-                color={chapterSelect.characters[0].color}
-            />
+            <>
+                <Marker
+                    xPosition={chapterSelect.locations[0].x_coordinates}
+                    yPosition={chapterSelect.locations[0].y_coordinates}
+                    zPosition={chapterSelect.locations[0].z_coordinates}
+                    color={chapterSelect.characters[0].color}
+                />
+                <Text 
+                    text={chapterSelect.section}
+                    textPosition={[10,60,-50]}
+                    textRotation={[0,0,0]}
+                    textSize={3}
+                    textWidth={1.5}
+                />
+                <Text 
+                    text={chapterSelect.title}
+                    textPosition={[-20,50,-50]}
+                    textRotation={[0,0,0]}
+                    textSize={8}
+                    textWidth={2}
+                />
+            </>
         )
         }
     }
@@ -59,23 +75,9 @@ export default function Environment() {
                 <OrbitControls minPolarAngle={0} maxPolarAngle={Math.PI / 2} minDistance={50} maxDistance={150}/>
                 <Lights />
                 {/* Kaladin Marker */}
-                {renderChapter()}
                 <Suspense fallback={null}>
                     {/* Chapter and Prologue information */}
-                    <Text 
-                        text={chapterSection}
-                        textPosition={[10,60,-50]}
-                        textRotation={[0,0,0]}
-                        textSize={3}
-                        textWidth={1.5}
-                    />
-                    <Text 
-                        text={chapterTitle}
-                        textPosition={[0,50,-50]}
-                        textRotation={[0,0,0]}
-                        textSize={8}
-                        textWidth={2}
-                    />
+                    {renderChapter()}
                     {/* Countries start here */}
                     <Text 
                         text={'Unclaimed Hills'}
@@ -171,7 +173,7 @@ export default function Environment() {
                     />
                     <Text
                         text={'The Shattered Plains'}
-                        textPosition={[90,7,45]}
+                        textPosition={[92,12,45]}
                         textRotation={[Math.PI/-5,0,0]}
                         textSize={1.5}
                         textWidth={.5}
