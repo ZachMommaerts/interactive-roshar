@@ -9,6 +9,7 @@ import Lights from './Lights';
 import Text from './Text';
 import Key from './Key';
 import Summary from './Summary';
+import Title from './Title';
 import Complicated_roshar_with_buildings from './Map'
 
 export default function Environment() {
@@ -27,8 +28,6 @@ export default function Environment() {
         if (bookInfo.chapters) {
         const chapterSelect = bookInfo.chapters[chapter];
         const summary = chapterSelect.chapter_location_characters[0].summary
-        const character = chapterSelect.characters[0].name
-        const color = chapterSelect.characters[0].color
         const locationName = chapterSelect.locations[0].name
         return(
             <>
@@ -49,6 +48,7 @@ export default function Environment() {
             <Key bookInfo={bookInfo} chapter={chapter} />
             <Summary bookInfo={bookInfo} chapter={chapter} />
             <BookDropDown setBook={setBook} />
+            <Title bookInfo={bookInfo} chapter={chapter}/>
             <Canvas camera={{position: [0,100,150]}}>
                 <OrbitControls makeDefault minPolarAngle={0} maxPolarAngle={Math.PI / 2} minDistance={50} maxDistance={150}/>
                 <Lights />
