@@ -11,7 +11,6 @@ export default function Text({ text, textPosition, textRotation, textSize, textW
     return(
     <mesh position={textPosition} rotation={textRotation}>
         <textGeometry args={[text, {font, size: textSize, height: textWidth}]}/>
-        <meshPhysicalMaterial attach='material' color={'white'}/>
     </mesh>
     )
 }

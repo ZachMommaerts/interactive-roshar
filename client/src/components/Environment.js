@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { Suspense } from "react";
-import { OrbitControls, Bounds, useBounds } from '@react-three/drei';
-import styled from 'styled-components';
+import { OrbitControls } from '@react-three/drei';
 import Marker from './Marker';
 import ChapterDropDown from './ChapterDropDown';
 import BookDropDown from './BookDropDown';
