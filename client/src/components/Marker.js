@@ -1,10 +1,12 @@
 import { useState, useEffect, useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
+import * as THREE from 'three'
 
 export default function Marker( { xPosition, yPosition, zPosition, color }) {
     const [hovered, setHovered ] = useState(false);
-    const [ clicked, setClicked ] = useState(false)
+    const [ clicked, setClicked ] = useState(false);
     const markerRef = useRef();
+    const vec = new THREE.Vector3()
     
     useEffect(() => {
         document.body.style.cursor = hovered ? 'pointer' : 'auto'
@@ -14,14 +16,11 @@ export default function Marker( { xPosition, yPosition, zPosition, color }) {
         markerRef.current.position.y = (yPosition + Math.sin(state.clock.getElapsedTime() * 2))
 
         if (clicked) {
-            state.camera.position.x = xPosition;
-            state.camera.position.y = yPosition + 50;
-            state.camera.position.z = zPosition + 50;
             state.camera.lookAt(markerRef.current.position)
-            // Figure out how to lerp the camera!
-            state.camera.position.lerp
+            state.camera.position.lerp(vec.set(xPosition, yPosition + 5, zPosition +10), .01)
             state.camera.updateProjectionMatrix()
         }
+        return null;
     })
 
     return(

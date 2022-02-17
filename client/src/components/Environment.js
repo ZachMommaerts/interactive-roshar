@@ -1,29 +1,21 @@
 import { useEffect, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { Suspense } from "react";
-import { OrbitControls } from '@react-three/drei';
+import { OrbitControls, Bounds, useBounds } from '@react-three/drei';
 import styled from 'styled-components';
 import Marker from './Marker';
 import ChapterDropDown from './ChapterDropDown';
 import BookDropDown from './BookDropDown';
 import Lights from './Lights';
 import Text from './Text';
+import Key from './Key';
+import Summary from './Summary';
 import Complicated_roshar_with_buildings from './Map'
-
-const H2 = styled.h2`
-    position: absolute;
-    display: block;
-    z-index: 1;
-    left: 50%;
-    top: 5%;
-`;
 
 export default function Environment() {
     const [ book, setBook ] = useState(1);
     const [ bookInfo, setBookInfo ] = useState({})
     const [ chapter, setChapter ] = useState(0);
-    const [ chapterSection, setChapterSection ] = useState('Prologue')
-    const [ chapterTitle, setChapterTitle ] = useState('To Kill')
 
     useEffect(() => {
         fetch(`/books/${book}`)
@@ -47,20 +39,6 @@ export default function Environment() {
                     zPosition={chapterSelect.locations[0].z_coordinates}
                     color={chapterSelect.characters[0].color}
                 />
-                <Text 
-                    text={chapterSelect.section}
-                    textPosition={[10,60,-50]}
-                    textRotation={[0,0,0]}
-                    textSize={3}
-                    textWidth={1.5}
-                />
-                <Text 
-                    text={chapterSelect.title}
-                    textPosition={[-20,50,-50]}
-                    textRotation={[0,0,0]}
-                    textSize={8}
-                    textWidth={2}
-                />
             </>
         )
         }
@@ -68,11 +46,12 @@ export default function Environment() {
 
     return(
         <>
-            <BookDropDown setBook={setBook} />
             <ChapterDropDown setChapter={setChapter} />
-            <H2>{chapter}</H2>
+            <Key bookInfo={bookInfo} chapter={chapter} />
+            <Summary bookInfo={bookInfo} chapter={chapter} />
+            <BookDropDown setBook={setBook} />
             <Canvas camera={{position: [0,100,150]}}>
-                <OrbitControls minPolarAngle={0} maxPolarAngle={Math.PI / 2} minDistance={50} maxDistance={150}/>
+                <OrbitControls makeDefault minPolarAngle={0} maxPolarAngle={Math.PI / 2} minDistance={50} maxDistance={150}/>
                 <Lights />
                 {/* Kaladin Marker */}
                 <Suspense fallback={null}>

@@ -1,12 +1,12 @@
 import { extend } from '@react-three/fiber'
 import { FontLoader } from 'three/examples/jsm/loaders/FontLoader'
 import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry'
-import cinzel from '../assets/Cinzel_Regular.json';
+import almendra from '../assets/Almendra SC_Regular.json'
 
 extend({ TextGeometry })
 
 export default function Text({ text, textPosition, textRotation, textSize, textWidth}) {
-    const font = new FontLoader().parse(cinzel);
+    const font = new FontLoader().parse(almendra);
     
     return(
     <mesh position={textPosition} rotation={textRotation}>
