@@ -17,7 +17,7 @@ export default function Marker( { xPosition, yPosition, zPosition, color }) {
 
         if (clicked) {
             state.camera.lookAt(markerRef.current.position)
-            state.camera.position.lerp(vec.set(xPosition, yPosition + 5, zPosition +10), .01)
+            state.camera.position.lerp(vec.set(xPosition, yPosition + 15, zPosition +15), .01)
             state.camera.updateProjectionMatrix()
         }
         return null;
@@ -34,9 +34,7 @@ export default function Marker( { xPosition, yPosition, zPosition, color }) {
             >
                 <coneBufferGeometry attach='geometry' args={[1, 5, 20]} />
                 <meshLambertMaterial attach='material' color={color} />
-                {/* <Html position={[0,-10,0]}>
-                    <h1>Kaladin</h1>
-                </Html> */}
+
         </mesh>
     )
 }

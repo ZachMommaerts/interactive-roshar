@@ -42,7 +42,7 @@ const P = styled.p`
 
 export default function Key( {bookInfo, chapter} ) {
 
-    if (bookInfo) {
+    if (bookInfo.chapters) {
         return(
             <Div>
                 <P>Key</P>
