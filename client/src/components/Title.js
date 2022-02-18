@@ -4,6 +4,7 @@ const Div = styled.div`
     position: absolute;
     top: 2%;
     left: 1%;
+    cursor: default;
     background-color: #212129;
     color: white;
     text-align: center;

@@ -3,7 +3,7 @@ import styled from "styled-components"
 const Div = styled.div`
     position: absolute;
     background-color: #212129;
-;
+    cursor: default;
     text-align: center;
     padding: 1em;
     color: white;

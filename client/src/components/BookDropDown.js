@@ -16,6 +16,7 @@ const Dropdown = styled.select`
     padding-right: .5rem;
     &:hover{
         background-color: #3e3f4d;
+        cursor: pointer;
     }
 `;
 

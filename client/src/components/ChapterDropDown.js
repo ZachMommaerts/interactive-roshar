@@ -17,12 +17,9 @@ const Dropdown = styled.select`
     
     &:hover{
         background-color: #3e3f4d;
+        cursor: pointer;
     }
 `;
-
-const Option = styled.option`
-
-`
 
 export default function ChapterDropDown({ setChapter }) {
 
