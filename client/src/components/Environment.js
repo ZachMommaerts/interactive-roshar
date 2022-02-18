@@ -16,6 +16,7 @@ export default function Environment() {
     const [ book, setBook ] = useState(1);
     const [ bookInfo, setBookInfo ] = useState({})
     const [ chapter, setChapter ] = useState(0);
+    const [ clicked, setClicked ] = useState(false);
 
     useEffect(() => {
         fetch(`/books/${book}`)
@@ -27,11 +28,12 @@ export default function Environment() {
     const renderChapter = () => {
         if (bookInfo.chapters) {
         const chapterSelect = bookInfo.chapters[chapter];
-        const summary = chapterSelect.chapter_location_characters[0].summary
         const locationName = chapterSelect.locations[0].name
         return(
             <>
                 <Marker
+                    clicked={clicked}
+                    setClicked={setClicked}
                     xPosition={chapterSelect.locations[0].x_coordinates}
                     yPosition={chapterSelect.locations[0].y_coordinates}
                     zPosition={chapterSelect.locations[0].z_coordinates}
@@ -45,8 +47,8 @@ export default function Environment() {
     return(
         <>
             <ChapterDropDown setChapter={setChapter} />
-            <Key bookInfo={bookInfo} chapter={chapter} />
-            <Summary bookInfo={bookInfo} chapter={chapter} />
+            {/* <Key bookInfo={bookInfo} chapter={chapter} /> */}
+            <Summary bookInfo={bookInfo} chapter={chapter} clicked={clicked}/>
             <BookDropDown setBook={setBook} />
             <Title bookInfo={bookInfo} chapter={chapter}/>
             <Canvas camera={{position: [0,100,150]}}>
@@ -58,85 +60,134 @@ export default function Environment() {
                     {renderChapter()}
                     {/* Countries start here */}
                     <Text 
-                        text={'Unclaimed Hills'}
-                        textPosition={[100,10,20]}
+                        text={'Unclaimed'}
+                        textPosition={[105,12,17]}
+                        textRotation={[Math.PI/-5,0,0]}
+                        textSize={2}
+                        textWidth={1}
+                    />
+                    <Text 
+                        text={'Hills'}
+                        textPosition={[109,10,20]}
                         textRotation={[Math.PI/-5,0,0]}
                         textSize={2}
                         textWidth={1}
                     />
                     <Text 
                         text={'Alethkar'}
-                        textPosition={[65,10,10]}
+                        textPosition={[65,0,10]}
                         textRotation={[Math.PI/-5,0,0]}
                         textSize={4}
                         textWidth={1}
                     />
                     <Text 
                         text={'Herdaz'}
-                        textPosition={[70,10,-38]}
+                        textPosition={[70,1,-40]}
                         textRotation={[Math.PI/-5,0,0]}
                         textSize={4}
                         textWidth={1}
                     />
                     <Text 
                         text={'Jah Keved'}
-                        textPosition={[25,10,-18]}
+                        textPosition={[25,5,-18]}
                         textRotation={[Math.PI/-5,0,0]}
                         textSize={4}
+                        textWidth={1}
+                    />
+                    <Text 
+                        text={'Tu Baylah'}
+                        textPosition={[0,0,-10]}
+                        textRotation={[Math.PI/-5,0,0]}
+                        textSize={3.5}
                         textWidth={1}
                     />
                     <Text 
                         text={'Reshi Isles'}
-                        textPosition={[-20,5,-70]}
-                        textRotation={[Math.PI/-5,0,0]}
-                        textSize={4}
-                        textWidth={1}
-                    />
-                    <Text 
-                        text={'Jah Keved'}
-                        textPosition={[25,10,-18]}
+                        textPosition={[-20,-3,-70]}
                         textRotation={[Math.PI/-5,0,0]}
                         textSize={4}
                         textWidth={1}
                     />
                     <Text 
                         text={'Shinovar'}
-                        textPosition={[-100,10,0]}
+                        textPosition={[-100,5,0]}
                         textRotation={[Math.PI/-5,0,0]}
                         textSize={4}
                         textWidth={1}
                     />
                     <Text 
                         text={'Frostlands'}
-                        textPosition={[60,5,60]}
+                        textPosition={[50,0,55]}
                         textRotation={[Math.PI/-5,0,0]}
                         textSize={4}
                         textWidth={1}
                     />
                     <Text 
                         text={'Thaylenah'}
-                        textPosition={[28,5,80]}
+                        textPosition={[30,2,78]}
                         textRotation={[Math.PI/-5,0,0]}
                         textSize={3}
                         textWidth={1}
                     />
                     <Text 
                         text={'Azir'}
-                        textPosition={[-40,6,20]}
+                        textPosition={[-40,3,20]}
                         textRotation={[Math.PI/-5,0,0]}
                         textSize={4}
                         textWidth={1}
                     />
                     <Text 
                         text={'Tukar'}
-                        textPosition={[-55,0,55]}
+                        textPosition={[-55,-2,58]}
+                        textRotation={[Math.PI/-5,0,0]}
+                        textSize={4}
+                        textWidth={1}
+                    />
+                    <Text 
+                        text={'Tashikk'}
+                        textPosition={[-67,-2,40]}
+                        textRotation={[Math.PI/-5,0,0]}
+                        textSize={4}
+                        textWidth={1}
+                    />
+                    <Text 
+                        text={'Yezier'}
+                        textPosition={[-70,2,20]}
+                        textRotation={[Math.PI/-5,0,0]}
+                        textSize={4}
+                        textWidth={1}
+                    />
+                    <Text 
+                        text={'Marat'}
+                        textPosition={[-20,0,55]}
+                        textRotation={[Math.PI/-5,0,0]}
+                        textSize={4}
+                        textWidth={1}
+                    />
+                    <Text 
+                        text={'Triax'}
+                        textPosition={[15,2,25]}
+                        textRotation={[Math.PI/-5,0,0]}
+                        textSize={4}
+                        textWidth={1}
+                    />
+                    <Text 
+                        text={'Rira'}
+                        textPosition={[-53,-1,-39]}
+                        textRotation={[Math.PI/-5,0,0]}
+                        textSize={4}
+                        textWidth={1}
+                    />
+                    <Text 
+                        text={'Iri'}
+                        textPosition={[-78,0,-45]}
                         textRotation={[Math.PI/-5,0,0]}
                         textSize={4}
                         textWidth={1}
                     />
                     <Text 
                         text={'Aimia'}
-                        textPosition={[-135,0,30]}
+                        textPosition={[-135,-2,30]}
                         textRotation={[Math.PI/-5,0,0]}
                         textSize={4}
                         textWidth={1}
@@ -144,49 +195,56 @@ export default function Environment() {
                     {/* Start of cities */}
                     <Text
                         text={'Kharbranth'}
-                        textPosition={[19,5,50]}
+                        textPosition={[19,-2,55]}
+                        textRotation={[Math.PI/-4,0,0]}
+                        textSize={1.5}
+                        textWidth={.5}
+                    />
+                    <Text
+                        text={'Shattered'}
+                        textPosition={[99,12.5,44]}
                         textRotation={[Math.PI/-5,0,0]}
                         textSize={1.5}
                         textWidth={.5}
                     />
                     <Text
-                        text={'The Shattered Plains'}
-                        textPosition={[92,12,45]}
+                        text={'Plains'}
+                        textPosition={[101,11,45]}
                         textRotation={[Math.PI/-5,0,0]}
                         textSize={1.5}
                         textWidth={.5}
                     />
                     <Text
                         text={'Hearthstone'}
-                        textPosition={[85,5,-30]}
-                        textRotation={[Math.PI/-5,0,0]}
+                        textPosition={[84,0,-25]}
+                        textRotation={[Math.PI/-3,0,0]}
                         textSize={1.5}
                         textWidth={.5}
                     />
                     <Text
                         text={'Kholinar'}
-                        textPosition={[88,5,-5]}
-                        textRotation={[Math.PI/-5,0,0]}
+                        textPosition={[89,0,0]}
+                        textRotation={[Math.PI/-3,0,0]}
                         textSize={1.5}
                         textWidth={.5}
                     />
                     <Text
                         text={'Urithiru'}
-                        textPosition={[-9,13,22]}
-                        textRotation={[Math.PI/-5,0,0]}
+                        textPosition={[-10,10,25]}
+                        textRotation={[Math.PI/-4,0,0]}
                         textSize={1.5}
                         textWidth={.5}
                     />
                     <Text
                         text={'The Purelake'}
-                        textPosition={[-30,-3,-7]}
+                        textPosition={[-28,-3,-6]}
                         textRotation={[Math.PI/-5,0,0]}
                         textSize={1.5}
                         textWidth={.5}
                     />
                     <Text
                         text={'Azimir'}
-                        textPosition={[-45,2,30]}
+                        textPosition={[-45,0,30]}
                         textRotation={[Math.PI/-5,0,0]}
                         textSize={1.5}
                         textWidth={.5}

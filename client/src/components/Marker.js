@@ -2,9 +2,8 @@ import { useState, useEffect, useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three'
 
-export default function Marker( { xPosition, yPosition, zPosition, color }) {
+export default function Marker( { clicked, setClicked, xPosition, yPosition, zPosition, color }) {
     const [hovered, setHovered ] = useState(false);
-    const [ clicked, setClicked ] = useState(false);
     const markerRef = useRef();
     const vec = new THREE.Vector3()
     

@@ -61,7 +61,6 @@ ChapterLocationCharacter.create(character_id: 5, chapter_id: 14, location_id: 8,
 ChapterLocationCharacter.create(character_id: 5, chapter_id: 14, location_id: 8, summary: "Dalinar leads an assault as the Kholin brothers begin their conquest of Alethkar.")
 ChapterLocationCharacter.create(character_id: 5, chapter_id: 15, location_id: 8, summary: "Dalinar prepares for his wedding day with his brother's widow: Novani Kholin.")
 ChapterLocationCharacter.create(character_id: 5, chapter_id: 16, location_id: 1, summary: "Navani is busy preparing the feast for the arrival of the Parshendi on the night of their celebratory treaty.")
-ChapterLocationCharacter.create(character_id: 5, chapter_id: 16, location_id: 1, summary: "Navani is busy preparing the feast for the arrival of the Parshendi on the night of their celebratory treaty.")
 ChapterLocationCharacter.create(character_id: 9, chapter_id: 17, location_id: 9, summary: "Lirin continues his occupation of helping those in need when a familiar stranger shows up in Hearthstone.")
 ChapterLocationCharacter.create(character_id: 2, chapter_id: 18, location_id: 9, summary: "Kaladin has arrived in Hearthstone to liberate the town from the hands of the Parshendi.")
 ChapterLocationCharacter.create(character_id: 9, chapter_id: 19, location_id: 9, summary: "Navani arrives in Hearthstone in the newly crafted airship, The Fourth Bridge, and prepares to evacuate the denizens.")

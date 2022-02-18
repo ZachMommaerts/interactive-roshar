@@ -4,21 +4,25 @@ const Dropdown = styled.select`
     appearance: none;
     text-align: center;
     position: absolute;
-    background-color: black;
+    background-color: #212129;
     color: white;
     font-family: 'Cinzel', serif;
-    font-size: 1em;
+    font-size: 1.2em;
     border-radius: .25em;
     z-index: 1;
-    left: 49%;
-    top: 1%;
+    left: 13%;
+    top: 11%;
     padding-left: .5rem;
     padding-right: .5rem;
     
     &:hover{
-        background-color: #59513b;
+        background-color: #3e3f4d;
     }
 `;
+
+const Option = styled.option`
+
+`
 
 export default function ChapterDropDown({ setChapter }) {
 

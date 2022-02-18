@@ -2,9 +2,9 @@ import styled from "styled-components"
 
 const Div = styled.div`
     position: absolute;
-    bottom: 2%;
-    left: 40%;
-    background-color: #171a1f;
+    top: 2%;
+    left: 1%;
+    background-color: #212129;
     color: white;
     text-align: center;
     width: 25rem;
@@ -13,10 +13,9 @@ const Div = styled.div`
 `;
 
 const H1 = styled.h1`
-    margin-top: -.5rem;
     margin-bottom: -.5rem;
     font-family: 'Cinzel', serif;
-    font-size: 1rem;
+    font-size: 1.5rem;
 `
 
 const H2 = styled.h2`
@@ -29,7 +28,6 @@ export default function Title({ bookInfo, chapter }) {
     if (bookInfo.chapters){
         return(
             <Div>
-                <H2>{bookInfo.chapters[chapter].section}</H2>
                 <H1>{bookInfo.chapters[chapter].title}</H1>
                 <H2> Year: {bookInfo.chapters[chapter].year}</H2>
             </Div>
